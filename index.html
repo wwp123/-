@@ -1,0 +1,174 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>无标题文档</title>
+<link href="style/datepicker.less" rel="stylesheet" type="text/less" />
+<link href="style/themes.less" rel="stylesheet" type="text/less" />
+<link href="style/layout.css" rel="stylesheet" type="text/css" />
+<link href="style/master.css" rel="stylesheet" type="text/css" />
+<script src="javascript/less-1.7.3.min.js"></script>
+<script src="javascript/jquery-2.1.3.js" type="text/javascript" charset="utf8"></script>
+<script src="javascript/date-timepicker.js" type="text/javascript" charset="utf8"></script>
+</head>
+
+<body>
+<div>
+	<div id="data_datatable">
+                                <div class="panel margin-t">
+                                    <header class="panel-heading">
+                                        日期插件
+                                    </header>
+                                    <div class="panel-body">
+                                        <form data-abide="">
+                                            <div class="row">
+                                                <label>单个日期插件</label>
+                                                <div class="small-12 columns">
+                                                    <!--date-time picking-->
+                                                    <div class="small-4 columns ">
+                                                        <label >DateTime Picking</label>
+                                                        <div class="input-group date form_datetime "  data-date-format="dd MM yyyy - HH:ii p" data-link-field="dtp_input1">
+                                                            <input class="form-control" type="text" value="" placeholder="发布时间" />
+                                                            <span class="input-group-addon"><span class="fa fa-calendar"></span></span>
+                                                        </div>
+                                                        <input type="hidden" id="dtp_input1" value="" />
+                                                    </div>
+                                                    <!--date picking-->
+
+                                                    <div class="small-4 columns padding-l10">
+                                                        <label>Date Picking</label>
+                                                        <div class="input-group date form_date " data-date="" data-date-format="dd MM yyyy" data-link-field="dtp_input2" data-link-format="yyyy-mm-dd">
+                                                            <input class="form-control"  type="text" value="" placeholder="发布时间" />
+                                                            <span class="input-group-addon"><span class="fa fa-calendar"></span></span>
+                                                        </div>
+                                                        <input type="hidden" id="dtp_input2" value="" />
+                                                    </div>
+                                                    <!--time picking-->
+
+                                                    <div class="small-4 columns padding-l10">
+                                                        <label >Time Picking</label>
+                                                        <div class="input-group date form_time c" data-date="" data-date-format="hh:ii" data-link-field="dtp_input3" data-link-format="hh:ii">
+                                                            <input class="form-control" type="text" value="" placeholder="发布时间" />
+                                                            <span class="input-group-addon"><span class="fa fa-calendar"></span></span>
+                                                        </div>
+                                                        <input type="hidden" id="dtp_input3" value="" />
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="row">
+                                                <label>开始-结束日期插件</label>
+                                                <div class="small-12 medium-6 large-6 columns">
+                                                    <div class="row">
+                                                        <div class="small-12 medium-3 large-3 columns">
+                                                            <label  class="right">成交时间</label>
+                                                        </div>
+                                                        <div class="small-12 medium-9 large-9 columns">
+                                                            <div class="input-group date form_datetime_range1 "  data-date-format="dd MM yyyy - HH:ii p" data-link-field="dtp_input4">
+                                                                <input class="form-control" type="text" value="" placeholder="发布时间" />
+                                                                <span class="input-group-addon"><span class="fa fa-calendar"></span></span>
+                                                            </div>
+                                                            <input type="hidden" id="dtp_input4" value="" />
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="small-12 medium-6 large-6 columns">
+                                                   <div class="row">
+                                                       <div class="small-12 medium-1 large-1 columns">
+                                                           <label class="text-center">到</label>
+                                                       </div>
+                                                       <div class="small-12 medium-11 large-11 columns">
+                                                           <div class="input-group date form_datetime_range2"  data-date-format="dd MM yyyy - HH:ii p" data-link-field="dtp_input5">
+                                                               <input class="form-control" type="text" value="" placeholder="发布时间" />
+                                                               <span class="input-group-addon"><span class="fa fa-calendar"></span></span>
+                                                           </div>
+                                                           <input type="hidden" id="dtp_input5" value="" />
+                                                       </div>
+                                                   </div>
+                                                </div>
+                                            </div>
+                                        </form>
+                                    </div>
+                                </div>
+                            </div>
+</div>
+<script>
+                    //日期插件
+
+                    //单个日历选择
+                    $('.form_datetime').datetimepicker({
+                        format: 'yyyy-mm-dd hh:ii',
+                        weekStart: 1,
+                        todayBtn:  1,
+                        autoclose: 1,
+                        todayHighlight: 1,
+                        startView: 2,
+                        forceParse: 0,
+                        showMeridian: 1,
+                        pickerPosition:'bottom-left'
+                    });
+                    $('.form_date').datetimepicker({
+                        format: 'yyyy-mm-dd',
+                        pickerPosition:'bottom-left',
+                        weekStart: 1,
+                        todayBtn:  1,
+                        autoclose: 1,
+                        todayHighlight: 1,
+                        startView: 2,
+                        minView: 2,
+                        forceParse: 0
+                    });
+                    $('.form_time').datetimepicker({
+                        pickerPosition:'bottom-left',
+                        weekStart: 1,
+                        todayBtn:  1,
+                        autoclose: 1,
+                        todayHighlight: 1,
+                        startView: 1,
+                        minView: 0,
+                        maxView: 1,
+                        forceParse: 0
+                    });
+
+                    //起始时间与结束时间日历
+                    var enddatetime;
+                    var startdatetime;
+                    $('.form_datetime_range1 input').hover(function(){
+                        $('.form_datetime_range1').datetimepicker({
+                            format:'yyyy-mm-dd hh:ii',
+                            weekStart: 1,
+                            todayBtn:  1,
+                            autoclose: 1,
+                            todayHighlight: 1,
+                            startView: 2,
+                            forceParse: 0,
+                            showMeridian: 1,
+//                        endDate: enddatetime,
+                            pickerPosition:'bottom-left',
+//                            linkField:'dtp_input5',
+//                            linkFormat: "yyyy-mm-dd hh:ii",
+                            endDate: enddatetime,
+                        }).on('changeDate', function(ev){
+                            $('.form_datetime_range2').datetimepicker('remove');
+                            startdatetime=$('.form_datetime_range1 input').val();
+                        });
+                    });
+                    $('.form_datetime_range2 input').hover(function(){
+                        $('.form_datetime_range2').datetimepicker({
+                            format:'yyyy-mm-dd hh:ii',
+                            weekStart: 1,
+                            todayBtn:  1,
+                            autoclose: 1,
+                            todayHighlight: 1,
+                            startView: 2,
+                            forceParse: 0,
+                            showMeridian: 1,
+                            startDate: startdatetime,
+                            pickerPosition:'bottom-left'
+                        }).on('changeDate', function(ev){
+                            $('.form_datetime_range1').datetimepicker('remove');
+                            enddatetime=$('.form_datetime_range2 input').val();
+                        });
+                    });
+                </script>
+</body>
+</html>
