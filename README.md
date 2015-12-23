@@ -3,7 +3,7 @@
 ####官方地址:http://www.bootcss.com/p/bootstrap-datetimepicker/
 
 ##兼容性
-
+* IE9+
 * Chrome 8+
 
 
